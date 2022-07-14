@@ -32,9 +32,7 @@ body {
 	line-height: 1;
 	font-family: 'Roboto';
 }
-ol, ul {
-	list-style: none;
-}
+
 
 .container {
 	display: grid;
@@ -45,34 +43,47 @@ ol, ul {
 }
 
 .sidebar {
-	background-color: skyblue;
-	font-size: 24px;
+	background-color: #ef4444;
+	font-size: max(1.6vw, 20px);
 	grid-area: 1 / 1 / 5 / 2;
 	color: white;
 }
 
+.sidebar li {
+	min-height: 40px;
+}
+
 .logo {
-	font-size: 40px;
-	padding: 20px;
+	display: grid;
+	font-size: max(2.8vw, 34px);
+	padding: 20px 6px 20px 20px;
+}
+
+.logo img {
+	width: 50px;
 }
 
 div .nav,
 .settings {
 	padding: 20px;
+	min-height: 300px;
 }
 
 li {
 	padding: 4px;
+	display: grid;
 }
 
 li:hover {
 	background: rgba(236, 236, 236, 0.5);
+	border-radius: 8px;
 }
 
 .header {
 	grid-area: 1 / 2 / 2 / -1;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
+	background-color: #fdba74;
 }
 
 .header1 {
@@ -88,7 +99,6 @@ li:hover {
 
 .search-icon img {
 	display: grid;
-	align-content: stretch;
 }
 
 .search-label {
@@ -114,6 +124,53 @@ button {
 }
 
 .main {
-	background-color: rgb(221, 221, 221);
-	grid-area: 2 / 2 / 5 / 3;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.left-column {
+	background-color: #f1f5f9;
+	display: grid;
+	grid-template: 1fr 9fr / 1fr;
+}
+
+.projects {
+	display: grid;
+	grid-template: repeat(3, 3fr) / 1fr 1fr;
+}
+
+h1 {
+	display: grid;
+	align-content: end;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 20px;
+	padding: 10px;
+}
+
+ul {
+	display: grid;
+	list-style: none;
+}
+
+.right-column {
+	display: grid;
+	grid-template-rows: 1fr 4fr 1fr 4fr;
+	background-color: #f1f5f9;
+}
+
+.projects > div,
+.right-column > ul {
+	background-color: white;
+	margin: 4px 20px 20px;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 4px grey;
+}
+
+.project {
+	border-width: 10px;
+	border-style: none none none solid;
+	border-color: #facc15;
 }
