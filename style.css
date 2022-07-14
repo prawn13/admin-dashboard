@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: 'Roboto';
 }
 ol, ul {
 	list-style: none;
@@ -38,6 +39,9 @@ ol, ul {
 .container {
 	display: grid;
 	grid-template: 1fr 4fr / 1fr 3fr;
+	place-content: stretch;
+	width: 100vw;
+	height: 100vh;
 }
 
 .sidebar {
@@ -61,8 +65,11 @@ li {
 	padding: 4px;
 }
 
+li:hover {
+	background: rgba(236, 236, 236, 0.5);
+}
+
 .header {
-	background-color: grey;
 	grid-area: 1 / 2 / 2 / -1;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
@@ -70,13 +77,43 @@ li {
 
 .header1 {
 	grid-row: 1 / 2;
+	display: grid;
+	grid-template-columns: 5fr 1fr 1fr 1fr;
+}
+
+.search {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+}
+
+.search-icon img {
+	display: grid;
+	align-content: stretch;
+}
+
+.search-label {
+	display: grid;
+	align-items: center;
+}
+
+input {
+	border-radius: 6px;
 }
 
 .header2 {
 	grid-row: 2 / 3;
+	display: grid;
+	grid-template-columns: 1fr 5fr repeat(3, 1fr);
+}
+
+button {
+	border-radius: 8px;
+	align-self: center;
+	background-color: rgb(62, 165, 255);
+	color: white;
 }
 
 .main {
-	background-color: rgb(221, 245, 255);
+	background-color: rgb(221, 221, 221);
 	grid-area: 2 / 2 / 5 / 3;
 }
