@@ -36,7 +36,7 @@ body {
 
 .container {
 	display: grid;
-	grid-template: 1fr 4fr / 1fr 3fr;
+	grid-template: 1fr 5fr / 1fr 3fr;
 	place-content: stretch;
 	width: 100vw;
 	height: 100vh;
@@ -44,23 +44,32 @@ body {
 
 .sidebar {
 	background-color: #ef4444;
-	font-size: max(1.6vw, 20px);
+	font-size: max(1.4vw, 20px);
 	grid-area: 1 / 1 / 5 / 2;
 	color: white;
 }
 
 .sidebar li {
 	min-height: 40px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.sidebar img {
+	padding-right: 14px;
+	width: max(28px, 1.7vw);
 }
 
 .logo {
-	display: grid;
-	font-size: max(2.8vw, 34px);
+	font-size: max(2.1vw, 34px);
 	padding: 20px 6px 20px 20px;
+	min-width: 240px;
+	display: flex;
+	align-items: flex-end;
 }
 
 .logo img {
-	width: 50px;
+	width: max(50px, 3vw);
 }
 
 div .nav,
@@ -71,12 +80,17 @@ div .nav,
 
 li {
 	padding: 4px;
-	display: grid;
 }
 
 li:hover {
 	background: rgba(236, 236, 236, 0.5);
-	border-radius: 8px;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+button:hover {
+	background: rgb(136, 196, 249);
+	padding: 10px;
 }
 
 .header {
@@ -86,10 +100,10 @@ li:hover {
 	background-color: #fdba74;
 }
 
-.header1 {
-	grid-row: 1 / 2;
+.header1,
+.header2 {
 	display: grid;
-	grid-template-columns: 5fr 1fr 1fr 1fr;
+	grid-template-columns: 5fr 1fr 2fr;
 }
 
 .search {
@@ -97,8 +111,11 @@ li:hover {
 	grid-template-columns: 1fr 5fr;
 }
 
-.search-icon img {
+.search-icon {
 	display: grid;
+	align-self: center;
+	justify-self: center;
+	padding: 10px;
 }
 
 .search-label {
@@ -107,31 +124,124 @@ li:hover {
 }
 
 input {
-	border-radius: 6px;
+	border-radius: 16px;
+	border: none;
+	padding: 10px;
 }
 
-.header2 {
-	grid-row: 2 / 3;
-	display: grid;
-	grid-template-columns: 1fr 5fr repeat(3, 1fr);
+.notifications {
+	align-self: center;
+	justify-self: end;
+	padding-right: 20px;
+	transform: scale(0.7);
+}
+
+.avatar-corner,
+.avatar-main {
+	display: flex;
+	padding: 0 10px 10px 15px;
+}
+
+.avatar-main {
+	gap: 20px;
+}
+
+.avatar-corner img,
+.right-column img {
+	border-radius: 50%;
+	max-width: 50px;
+	max-height: 50px;
+	place-self: center;
+}
+
+.avatar-main img {
+	border-radius: 50%;
+	max-width: 70px;
+	max-height: 70px;
+	place-self: center;
+	margin-left: 40px;
+}
+
+.greeting {
+	font-weight: bold;
+	padding: 10px 10px 10px 0;
+}
+
+.greeting > p {
+	padding-top: 12px;
+	font-size: 26px;
+}
+
+.username {
+	align-self: center;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.two-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.new {
+	justify-self: end;
+	margin-right: 20px;
 }
 
 button {
-	border-radius: 8px;
+	border-radius: 20px;
+	font-size: 16px;
 	align-self: center;
+	justify-self: end;
 	background-color: rgb(62, 165, 255);
 	color: white;
+	border: none;
+	width: 90px;
+	height: 40px;
+	margin: 8px;
 }
+
+.announce-border {
+	border-style: solid none solid none;
+	border-color:rgb(210, 210, 210);
+	border-width: 2px;
+	padding: 10px;
+}
+
+.announcements > li {
+	align-self: center;
+	padding: 10px;
+}
+
+.trending {
+	display: grid;
+	grid-template: repeat(4, fr) / 1fr 3fr;
+}
+
+.trending li {
+	display: flex;
+	align-items: flex-end;	
+}
+
+.trending div {
+	align-self: center;
+	padding-left: 20px;
+	line-height: 1.3;
+}
+
 
 .main {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+	padding: 20px 20px 60px 10px;
+	background-color: #f1f5f9;
 }
 
 .left-column {
-	background-color: #f1f5f9;
+	
 	display: grid;
-	grid-template: 1fr 9fr / 1fr;
+	grid-template: 1fr 11fr / 1fr;
 }
 
 .projects {
@@ -143,10 +253,23 @@ h1 {
 	display: grid;
 	align-content: end;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: bold;
 	margin-left: 20px;
 	padding: 10px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+	height: 0;
+	align-self: center;
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: bold;
+	align-self: end;
 }
 
 ul {
@@ -156,8 +279,7 @@ ul {
 
 .right-column {
 	display: grid;
-	grid-template-rows: 1fr 4fr 1fr 4fr;
-	background-color: #f1f5f9;
+	grid-template-rows: 1fr 5fr 1fr 5fr;
 }
 
 .projects > div,
@@ -173,4 +295,5 @@ ul {
 	border-width: 10px;
 	border-style: none none none solid;
 	border-color: #facc15;
+	display: grid;
 }
